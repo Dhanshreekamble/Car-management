@@ -1,0 +1,16 @@
+package com.car.management.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springdoc.core.models.GroupedOpenApi;
+import org.springdoc.core.models.SwaggerUiConfigProperties;
+import org.springdoc.webmvc.ui.SwaggerConfig;
+
+@Configuration
+public class SwaggerConfig {
+
+    @Bean
+    public GroupedOpenApi carApi() {
+        return GroupedOpenApi.builder().group("Car Management API").pathsToMatch("/api/cars/**").build();
+    }
+}
