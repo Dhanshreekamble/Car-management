@@ -1,0 +1,10 @@
+package com.car.management.repository;
+
+import com.car.management.model.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CarRepository extends JpaRepository<Car, Long> {
+    List<Car> findByNameContainingIgnoreCaseOrModelContainingIgnoreCaseOrYear(Integer year, String name, String model);
+}
